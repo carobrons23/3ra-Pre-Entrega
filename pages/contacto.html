@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../css/estilo.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+            <script src="https://kit.fontawesome.com/be621845ec.js"></script>
+            <title>ZIBÁ | Contacto</title>
+            <link rel="shortcut icon" href="../img/logoziba.webp">
+        </head>
+    </head>
+<body>
+    <header>
+        <div class="header-section container">
+            <input type="checkbox" id="toggler">
+            <label for="toggler" class="fas fa-bars"></label>
+            <img class="logo" src="../img/logo-cerca.jpg" alt="">
+            <nav class="navbar">
+                <ul>
+                    <a href="../index.html">INICIO</a>
+                    <a href="productos.html">PRODUCTOS</a>
+                    <a href="metodos.html">MÉTODOS DE PAGO</a>
+                    <a href="contacto.html">CONTACTO</a>
+                    <a href="nosotros.html">NOSOTROS</a>
+                </ul>
+            </nav>
+            <div>
+                <img onclick="showCart(this)" class="cart" src="../img/carrito.webp" alt="">
+                <p class="count-product">0</p>
+            </div>
+            <div class="cart-products" id="products-id">
+                <p class="close-btn" onclick="closeBtn()">X</p>
+                <h3>CARRITO</h3>
+                <div class="card-items">
+                    <!-- <div class="item">
+                        <img src="./img/abridor1.jpg" alt="">
+                        <div class="item-content">
+                            <h5>AROS 1</h5>
+                            <h5 class="cart-price">$4000</h5>
+                            <h6>3</h6>
+                        </div>
+                        <span>X</span>
+                    </div>
+    
+                    <div class="item">
+                        <img src="./img/abridor2.jpg" alt="">
+                        <div class="item-content">
+                            <h5>AROS 2</h5>
+                            <h5 class="cart-price">$4100</h5>
+                            <h6>3</h6>
+                        </div>
+                        <span class="delete-product" data-id="">X</span>
+                    </div> -->
+                </div>
+                <h2>Total: $<strong class="price-total">0</strong></h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- titulo -->
+        <div class="row">
+            <h2 class="section-titulo">CONTACTO</h2>
+        </div>
+        <!-- section contacto -->
+        <div class="container my-4 px-3">
+            <div class="row gx-5">
+                <!-- redes sociales -->
+                <section class="col-lg-6 col-12">
+                    <div class="row justify-content-center">
+                        <h3 class="col-lg-11 col-10 subtitulo-contacto">Contactános para concretar tu <b>compra</b>, ofrecer la <b>venta</b> de tus prendas o pedirnos <b>ayuda</b>.</h3>
+                    </div>
+                    <figure class="red-social-contacto">
+                        <a class="row justify-content-center" href="#"
+                        target="_blank">
+                            <i class="col-1 m-2 fa-brands fa-instagram"></i>
+                            <figcaption class="col-sm-5 col-8">
+                                Instagram
+                                <br>@zibajoyas
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="red-social-contacto">
+                        <a class="row justify-content-center" href="#"
+                        target="_blank">
+                            <i class="col-1 m-2 fa-brands fa-whatsapp"></i>
+                            <figcaption class="col-sm-5 col-8">
+                                Whatsapp
+                                <br>+54 9 1128230081
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="red-social-contacto">
+                        <a class="row justify-content-center" href="#"
+                        target="_blank">
+                            <i class="col-1 m-2 fa-regular fa-envelope"></i>
+                            <figcaption class="col-sm-5 col-8">
+                                Email
+                                <br>zibajoyas@gmail.com
+                            </figcaption>
+                        </a>
+                    </figure>
+                </section>
+                <!-- formulario -->
+                <section class="col-lg-6 col-12">
+                    <form class="row justify-content-center" id="formulario">
+                        <div class="col-lg-8 col-10 mb-3 p-0">
+                            <input type="text" placeholder="Nombre" required id="nombre" class="form-control-sm col-12">
+                        </div>
+                        <div class="col-lg-8 col-10 mb-3 p-0">
+                            <input type="email" placeholder="Email" required id="email" class="form-control-sm col-12">
+                        </div>
+                        <div class="col-lg-8 col-10 mb-3 p-0">
+                            <textarea placeholder="Mensaje" name="nombre" required id="mensaje" class="form-control-sm col-12 text-area"></textarea>
+                        </div>
+                        <button type="submit" class="col-lg-8 col-10 btn-form" id="btnEnviar">Enviar</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="caja-box">
+                <div class="box1">
+                    <h2>AYUDA</h2>
+                    <ul class="lista-ayuda">
+                        <li><a href="#">Envios</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Métodos de pago</a></li>
+                        <li><a href="#">Información</a></li>
+                        <li><a href="#">Cambios</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                    </ul>
+                </div>
+                <div class="box1">
+                    <h2>PRODUCTOS</h2>
+                    <ul class="lista-ayuda">
+                        <li><a href="#">Anillos</a></li>
+                        <li><a href="#">Pulseras</a></li>
+                        <li><a href="#">Collares</a></li>
+                        <li><a href="#">Aritos</a></li>
+                        <li><a href="#">Dijes</a></li>
+                        <li><a href="#">Chokers</a></li>
+                    </ul>
+                </div>
+                <div class="box1">
+                    <h2>TRABAJAMOS CON:</h2>
+                    <ul class="lista-ayuda">
+                        <li><a href="#">Plata 925</a></li>
+                        <li><a href="#">Enchapado en Oro</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <div class="red-social">
+                <a href="#" target="_blank" class="fa fa-facebook"></a>
+                <a href="#" target="_blank" class="fa fa-instagram"></a>
+                <a href="#" target="_blank" class="fa-regular fa-envelope"></a>
+                <a href="#" target="_blank" class="fa fa-whatsapp"></a>
+            </div>
+            <p>&copy; 2023 <b>ZIBÁ JOYAS</b> Todos los Derechos Reservados.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- JavaScript -->
+    <script src="./scripts/busqueda.js"></script>
+    <script src="./scripts/catalogo.js"></script>
+    <script src="./scripts/carrito.js"></script>
+    <script src="./scripts/formulario.js"></script>
+</body>
+</html>

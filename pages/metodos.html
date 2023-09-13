@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../css/estilo.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+            <script src="https://kit.fontawesome.com/be621845ec.js"></script>
+            <title>ZIBÁ | Métodos</title>
+            <link rel="shortcut icon" href="../img/logoziba.webp">
+        </head>
+    </head>
+<body>
+    <header>
+        <div class="header-section container">
+            <input type="checkbox" id="toggler">
+            <label for="toggler" class="fas fa-bars"></label>
+            <img class="logo" src="../img/logo-cerca.jpg" alt="">
+            <nav class="navbar">
+                <ul>
+                    <a href="../index.html">INICIO</a>
+                    <a href="productos.html">PRODUCTOS</a>
+                    <a href="metodos.html">MÉTODOS DE PAGO</a>
+                    <a href="contacto.html">CONTACTO</a>
+                    <a href="nosotros.html">NOSOTROS</a>
+                </ul>
+            </nav>
+            <div>
+                <img onclick="showCart(this)" class="cart" src="../img/carrito.webp" alt="">
+                <p class="count-product">0</p>
+            </div>
+            <div class="cart-products" id="products-id">
+                <p class="close-btn" onclick="closeBtn()">X</p>
+                <h3>CARRITO</h3>
+                <div class="card-items">
+                    <!-- <div class="item">
+                        <img src="./img/abridor1.jpg" alt="">
+                        <div class="item-content">
+                            <h5>AROS 1</h5>
+                            <h5 class="cart-price">$4000</h5>
+                            <h6>3</h6>
+                        </div>
+                        <span>X</span>
+                    </div>
+    
+                    <div class="item">
+                        <img src="./img/abridor2.jpg" alt="">
+                        <div class="item-content">
+                            <h5>AROS 2</h5>
+                            <h5 class="cart-price">$4100</h5>
+                            <h6>3</h6>
+                        </div>
+                        <span class="delete-product" data-id="">X</span>
+                    </div> -->
+                </div>
+                <h2>Total: $<strong class="price-total">0</strong></h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- titulo -->
+        <div class="row">
+            <h2 class="section-titulo">CÓMO COMPRAR</h2>
+        </div>
+        <!-- section como comprar -->
+        <div class="container-fluid p-5 my-4 como-comprar-container">
+            <section class="row gx-5 justify-content-center">
+                <!-- compra -->
+                <div class="col-xl-3 col-md-6 col-sm-9 col-12">
+                    <div class="row justify-content-center">
+                        <img src="../img/compra.png" alt="compra">
+                        <h3>COMPRA Y PAGO</h3>
+                    </div>
+                    <div class="row">
+                        <p class="como-comprar-texto">La compra se realiza a través de <b class="como-comprar-texto">Instagram</b> 
+                            o <b class="como-comprar-texto">Whatsapp</b>. Una vez hecho el pedido, se 
+                            te proporcionarán los datos del medio de pago elegido.</p>
+                    </div>
+                    <ul class="row">
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <b class="col-11 como-comprar-texto-subtitulos">Transferencia bancaria</b>
+                            <p class="col-11 offset-1 como-comprar-texto">a cuenta BROU.</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <b class="col-11 como-comprar-texto-subtitulos">Depósito gratis</b>
+                            <p class="col-11 offset-1 como-comprar-texto">en Abitab / Red pagos.</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <b class="col-11 como-comprar-texto-subtitulos">Contado</b>
+                            <p class="col-11 offset-1 como-comprar-texto">al obtener el pedido.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- envíos y retiros -->
+                <div class="col-xl-3 col-md-6 col-sm-9 col-12">
+                    <div class="row justify-content-center">
+                        <img src="../img/envios.png" alt="Compra y pago">
+                        <h3>ENVÍOS Y RETIROS</h3>
+                    </div>
+                    <ul class="row">
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <b class="col-11 como-comprar-texto-subtitulos">Retiro personal</b>
+                            <p class="col-11 offset-1 como-comprar-texto">Podes retirar tu pedido personalmente en Florida ciudad.</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <b class="col-11 como-comprar-texto-subtitulos">Envíos a domicilio</b>
+                            <p class="col-11 offset-1 como-comprar-texto">Te llevamos el pedido a tu casa en Florida por un extra de <b class="como-comprar-texto">$40</b>.</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <b class="col-11 como-comprar-texto-subtitulos">Envíos a todo el país</b>
+                            <p class="col-11 offset-1 como-comprar-texto">A elección por DAC, Mirtrans, Correo uruguayo, UES.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- no hay cambios ni devoluciones -->
+                <div class="col-xl-3 col-md-6 col-sm-9 col-12">
+                    <div class="row justify-content-center">
+                        <img src="../img/devoluciones.png" alt="Compra y pago">
+                        <h3>NO HAY CAMBIOS NI DEVOLUCIONES</h3>
+                    </div>
+                    <div class="row">
+                        <p class="como-comprar-texto">Te damos toda la información para que tu compra sea exitosa,
+                            cualquier duda será respondida cuanto antes.</p>
+                    </div>
+                    <div class="row">
+                        <p class="como-comprar-texto">Recordá que tu pedido puede ser el deseado por alguien más y 
+                            no queremos confusiones por parte de clientes sobre la disponibilidad.</p>
+                    </div>
+                    <div class="row">
+                        <p class="como-comprar-texto">¡No dudes en consultar tus preguntas!</p>
+                    </div>
+                </div>
+                <!-- vende lo que ya no usas -->
+                <div class="col-xl-3 col-md-6 col-sm-9 col-12">
+                    <div class="row justify-content-center">
+                        <img src="../img/dinero.png" alt="Compra y pago">
+                        <h3>VENDÉ LO QUE YA NO USÁS</h3>
+                    </div>
+                    <div class="row">
+                        <p class="como-comprar-texto">Contactános por</p>
+                    </div>
+                    <ul class="row gy-3">
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <a href="https://www.instagram.com/loopclothes.uy/" target="_blank"><b class="col-11 como-comprar-texto-subtitulos">Instragram</b></a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <a href="https://wa.me/095888132" target="_blank"><b class="col-11 como-comprar-texto-subtitulos">Whatsapp</b></a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right col-1 como-comprar-texto"></i>
+                            <a href="contacto.html"><b class="col-11 como-comprar-texto-subtitulos">Sección de contacto</b></a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <p class="como-comprar-texto">y contános sobre las prendas que te
+                            interesan vender en <b class="como-comprar-texto">Zibá Joyas</b>.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- titulo -->
+        <div class="row">
+            <h2 class="section-titulo">MÉTODOS DE PAGO</h2>
+        </div>
+        <div class="container2">
+            <form action="#">
+                <div class="categoria">
+                    <label for="visa">
+                        <div class="imgName">
+                            <div class="imgContainer">
+                                <img class="imgContainer" src="../img/visa.jpg" alt="imgvisa">
+                            </div>
+                            <span class="name">VISA</span>
+                        </div>
+                        <span><i class="fa-solid fa-circle-check"></i></span>
+                    </label>
+                    <label for="mastercard">
+                        <div class="imgName">
+                            <div class="imgContainer">
+                                <img class="imgContainer" src="../img/mastercard.jpg" alt="imgmastercard">
+                            </div>
+                            <span class="name">MaterCard</span>
+                        </div>
+                        <span><i class="fa-solid fa-circle-check"></i></span>
+                    </label>
+                    <label for="NaranjaX">
+                        <div class="imgName">
+                            <div class="imgContainer">
+                                <img class="imgContainer" src="../img/naranja.jpg" alt="imgnaranja">
+                            </div>
+                            <span class="name">NaranjaX</span>
+                        </div>
+                        <span><i class="fa-solid fa-circle-check"></i></span>
+                    </label>
+                    <label for="American Express">
+                        <div class="imgName">
+                            <div class="imgContainer">
+                                <img class="imgContainer" src="../img/american.jpg" alt="imgamerican">
+                            </div>
+                            <span class="name">American Express</span>
+                        </div>
+                        <span><i class="fa-solid fa-circle-check"></i></span>
+                    </label>
+                    <label for="efectivo">
+                        <div class="imgName">
+                            <div class="imgContainer">
+                                <img class="imgContainer" src="../img/efectivo.jpg" alt="imgefectivo">
+                            </div>
+                            <span class="name">Efectivo</span>
+                        </div>
+                        <span><i class="fa-solid fa-circle-check"></i></span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="caja-box">
+                <div class="box1">
+                    <h2>AYUDA</h2>
+                    <ul class="lista-ayuda">
+                        <li><a href="#">Envios</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Métodos de pago</a></li>
+                        <li><a href="#">Información</a></li>
+                        <li><a href="#">Cambios</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                    </ul>
+                </div>
+                <div class="box1">
+                    <h2>PRODUCTOS</h2>
+                    <ul class="lista-ayuda">
+                        <li><a href="#">Anillos</a></li>
+                        <li><a href="#">Pulseras</a></li>
+                        <li><a href="#">Collares</a></li>
+                        <li><a href="#">Aritos</a></li>
+                        <li><a href="#">Dijes</a></li>
+                        <li><a href="#">Chokers</a></li>
+                    </ul>
+                </div>
+                <div class="box1">
+                    <h2>TRABAJAMOS CON:</h2>
+                    <ul class="lista-ayuda">
+                        <li><a href="#">Plata 925</a></li>
+                        <li><a href="#">Enchapado en Oro</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <div class="red-social">
+                <a href="#" target="_blank" class="fa fa-facebook"></a>
+                <a href="#" target="_blank" class="fa fa-instagram"></a>
+                <a href="#" target="_blank" class="fa-regular fa-envelope"></a>
+                <a href="#" target="_blank" class="fa fa-whatsapp"></a>
+            </div>
+            <p>&copy; 2023 <b>ZIBÁ JOYAS</b> Todos los Derechos Reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- JavaScript -->
+    <script src="../app.js"></script>
+</body>
+</html>
