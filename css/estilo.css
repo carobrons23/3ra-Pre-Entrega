@@ -206,7 +206,7 @@ header .fa-bars {
 
 /*float cart*/
 .cart-products .item img {
-    width: 115px;
+    width: 80px;
 }
 .cart-products .item {
     display: flex;
@@ -220,7 +220,7 @@ header .fa-bars {
 }
 .cart-products .item .item-content h5 {
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     font-family: system-ui;
 }
