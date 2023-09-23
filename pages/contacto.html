@@ -1,71 +1,111 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="../css/estilo.css">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-                integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-            <script src="https://kit.fontawesome.com/be621845ec.js"></script>
-            <title>ZIBÁ | Contacto</title>
-            <link rel="shortcut icon" href="../img/logoziba.webp">
-        </head>
-    </head>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/be621845ec.js"></script>
+    <title>ZIBÁ | Contacto</title>
+    <link rel="shortcut icon" href="../img/logoziba.webp">
+</head>
+
 <body>
-    <header>
-        <div class="header-section container">
-            <input type="checkbox" id="toggler">
-            <label for="toggler" class="fas fa-bars"></label>
-            <img class="logo" src="../img/logo-cerca.jpg" alt="">
-            <nav class="navbar">
-                <ul>
-                    <a href="../index.html">INICIO</a>
-                    <a href="productos.html">PRODUCTOS</a>
-                    <a href="metodos.html">MÉTODOS DE PAGO</a>
-                    <a href="contacto.html">CONTACTO</a>
-                    <a href="nosotros.html">NOSOTROS</a>
-                </ul>
-            </nav>
-            <div>
-                <img onclick="showCart(this)" class="cart" src="../img/carrito.webp" alt="">
-                <p class="count-product">0</p>
-            </div>
-            <div class="cart-products" id="products-id">
-                <p class="close-btn" onclick="closeBtn()">X</p>
-                <h3>CARRITO</h3>
-                <div class="card-items">
-                    <!-- <div class="item">
-                        <img src="./img/abridor1.jpg" alt="">
-                        <div class="item-content">
-                            <h5>AROS 1</h5>
-                            <h5 class="cart-price">$4000</h5>
-                            <h6>3</h6>
-                        </div>
-                        <span>X</span>
+    <header class="sticky-top">
+        <!-- nav bar-->
+        <nav class="navbar navbar-expand-lg contenedor-nav">
+            <div class="container">
+                <!-- menu hamburguesa (responsive) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- logo -->
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo-cerca.jpg" alt="logo zibá">
+                </a>
+                <!-- carrito -->
+                <div class="navbar-btn-container">
+                    <button class="navbar-btn" id="verCarrito">
+                        <p class="count-product">0</p>
+                        <i onclick="showCart(this)" class="cart fa-solid fa-cart-shopping"></i>
+                    </button>
+                    <!-- contenedor del modal del carrito -->
+                    <div class="modalFondo">
+                        <div id="modalContenedor"></div>
                     </div>
-    
-                    <div class="item">
-                        <img src="./img/abridor2.jpg" alt="">
-                        <div class="item-content">
-                            <h5>AROS 2</h5>
-                            <h5 class="cart-price">$4100</h5>
-                            <h6>3</h6>
-                        </div>
-                        <span class="delete-product" data-id="">X</span>
-                    </div> -->
                 </div>
-                <h2>Total: $<strong class="price-total">0</strong></h2>
+                <!-- nav -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                        <li class="nav-item p-2">
+                            <a class="nav-link" aria-current="page" href="../index.html">INICIO</a>
+                        </li>
+                        <!-- catalogo: menu desplegable (hover) -->
+                        <li id="menu-desplegable-hover" class="nav-item p-2">
+                            <div class="desplegable">
+                                <a class="nav-link dropdown-toggle" href="productos.html">
+                                    PRODUCTOS
+                                </a>
+                                <div class="desplegable-contenido">
+                                    <ul class="filtrarCatalogo">
+                                        <li><a data-value="anillos" href="../pages2/anillos.html">ANILLOS</a></li>
+                                        <li><a data-value="Pulsera" href="../pages2/pulseras.html">PULSERAS</a></li>
+                                        <li><a data-value="collares" href="../pages2/collares.html">COLLARES</a></li>
+                                        <li><a data-value="aros" href="../pages2/aritos.html">AROS</a></li>
+                                        <li><a data-value="dijes" href="../pages2/dijes.html">DIJES</a></li>
+                                        <li><a data-value="abridores" href="../pages2/abridor.html">ABRIDORES</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- catalogo: menu desplegable (dropdown) -->
+                        <li id="menu-desplegable-hamburguesa" class="nav-item p-1 dropdown">
+                            <a class="nav-link dropdown-toggle nav-link-dropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                PRODUCTOS
+                            </a>
+                            <ul class="dropdown-menu filtrarCatalogo">
+                                <hr class="dropdown-divider">
+                                <li><a data-value="buzos" class="dropdown-item"
+                                        href="../pages2/anillos.html">ANILLOS</a></li>
+                                <li><a data-value="calzados" class="dropdown-item"
+                                        href="../pages2/pulseras.html">PULSERAS</a></li>
+                                <li><a data-value="camisas" class="dropdown-item"
+                                        href="../pages2/collares.html">COLLARES</a></li>
+                                <li><a data-value="aros" class="dropdown-item" href="../pages2/aritos.html">AROS</a>
+                                </li>
+                                <li><a data-value="dijes" class="dropdown-item" href="../pages2/dijes.html">DIJES</a>
+                                </li>
+                                <li><a data-value="abridores" class="dropdown-item"
+                                        href="../pages2/abridor.html">ABRIDORES</a></li>
+                            </ul>
+                        </li>
+                        <!-- otros items del nav -->
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="metodos.html">CÓMO COMPRAR</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="nosotros.html">CONOCÉNOS</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main>
         <!-- titulo -->
-        <div class="row">
+        <div class="subtitulo">
             <h2 class="section-titulo">CONTACTO</h2>
         </div>
         <!-- section contacto -->
@@ -74,11 +114,11 @@
                 <!-- redes sociales -->
                 <section class="col-lg-6 col-12">
                     <div class="row justify-content-center">
-                        <h3 class="col-lg-11 col-10 subtitulo-contacto">Contactános para concretar tu <b>compra</b>, ofrecer la <b>venta</b> de tus prendas o pedirnos <b>ayuda</b>.</h3>
+                        <h3 class="col-lg-11 col-10 subtitulo-contacto">Contactános para concretar tu <b>compra</b>, o
+                            pedirnos <b>ayuda</b>.</h3>
                     </div>
                     <figure class="red-social-contacto">
-                        <a class="row justify-content-center" href="#"
-                        target="_blank">
+                        <a class="row justify-content-center" href="#" target="_blank">
                             <i class="col-1 m-2 fa-brands fa-instagram"></i>
                             <figcaption class="col-sm-5 col-8">
                                 Instagram
@@ -87,8 +127,7 @@
                         </a>
                     </figure>
                     <figure class="red-social-contacto">
-                        <a class="row justify-content-center" href="#"
-                        target="_blank">
+                        <a class="row justify-content-center" href="#" target="_blank">
                             <i class="col-1 m-2 fa-brands fa-whatsapp"></i>
                             <figcaption class="col-sm-5 col-8">
                                 Whatsapp
@@ -97,8 +136,7 @@
                         </a>
                     </figure>
                     <figure class="red-social-contacto">
-                        <a class="row justify-content-center" href="#"
-                        target="_blank">
+                        <a class="row justify-content-center" href="#" target="_blank">
                             <i class="col-1 m-2 fa-regular fa-envelope"></i>
                             <figcaption class="col-sm-5 col-8">
                                 Email
@@ -117,7 +155,8 @@
                             <input type="email" placeholder="Email" required id="email" class="form-control-sm col-12">
                         </div>
                         <div class="col-lg-8 col-10 mb-3 p-0">
-                            <textarea placeholder="Mensaje" name="nombre" required id="mensaje" class="form-control-sm col-12 text-area"></textarea>
+                            <textarea placeholder="Mensaje" name="nombre" required id="mensaje"
+                                class="form-control-sm col-12 text-area"></textarea>
                         </div>
                         <button type="submit" class="col-lg-8 col-10 btn-form" id="btnEnviar">Enviar</button>
                     </form>
@@ -132,23 +171,23 @@
                 <div class="box1">
                     <h2>AYUDA</h2>
                     <ul class="lista-ayuda">
-                        <li><a href="#">Envios</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Métodos de pago</a></li>
+                        <li><a href="./metodos.html">Envios</a></li>
+                        <li><a href="./nosotros.html">Nosotros</a></li>
+                        <li><a href="./metodos.html">Métodos de pago</a></li>
                         <li><a href="#">Información</a></li>
-                        <li><a href="#">Cambios</a></li>
-                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="./metodos.html">Cambios</a></li>
+                        <li><a href="./metodos.html">Devoluciones</a></li>
                     </ul>
                 </div>
                 <div class="box1">
                     <h2>PRODUCTOS</h2>
                     <ul class="lista-ayuda">
-                        <li><a href="#">Anillos</a></li>
-                        <li><a href="#">Pulseras</a></li>
-                        <li><a href="#">Collares</a></li>
-                        <li><a href="#">Aritos</a></li>
-                        <li><a href="#">Dijes</a></li>
-                        <li><a href="#">Chokers</a></li>
+                        <li><a href="../pages2/anillos.html">Anillos</a></li>
+                        <li><a href="../pages2/pulseras.html">Pulseras</a></li>
+                        <li><a href="../pages2/collares.html">Collares</a></li>
+                        <li><a href="../pages2/aritos.html">Aritos</a></li>
+                        <li><a href="../pages2/dijes.html">Dijes</a></li>
+                        <li><a href="../pages2/abridor.html">Abridores</a></li>
                     </ul>
                 </div>
                 <div class="box1">
@@ -162,7 +201,6 @@
         </div>
         <div class="grupo-2">
             <div class="red-social">
-                <a href="#" target="_blank" class="fa fa-facebook"></a>
                 <a href="#" target="_blank" class="fa fa-instagram"></a>
                 <a href="#" target="_blank" class="fa-regular fa-envelope"></a>
                 <a href="#" target="_blank" class="fa fa-whatsapp"></a>
@@ -170,16 +208,22 @@
             <p>&copy; 2023 <b>ZIBÁ JOYAS</b> Todos los Derechos Reservados.</p>
         </div>
     </footer>
+
+    <script>
+        function showCart(x) {
+            document.getElementById("products-id").style.display = "block";
+        }
+        function closeBtn() {
+            document.getElementById("products-id").style.display = "none";
+        }
+    </script>
+
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <!-- Toastify -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <!-- Sweet alert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- JavaScript -->
-    <script src="./scripts/busqueda.js"></script>
-    <script src="./scripts/catalogo.js"></script>
-    <script src="./scripts/carrito.js"></script>
-    <script src="./scripts/formulario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        </script>
+
+    <script src="../app.js"></script>
 </body>
+
 </html>

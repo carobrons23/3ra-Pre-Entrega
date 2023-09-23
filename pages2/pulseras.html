@@ -3,76 +3,138 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilo.css">
-    <script src="app.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/be621845ec.js"></script>
-    <title>ZIBÁ JOYAS - PULSERAS</title>
+    <title>ZIBÁ JOYAS - Pulseras</title>
     <link rel="shortcut icon" href="../img/logoziba.webp">
 </head>
+
 <body>
-    <header>
-        <div class="header-section container">
-            <input type="checkbox" id="toggler">
-            <label for="toggler" class="fas fa-bars"></label>
-            <img class="logo" src="../img/logo-cerca.jpg" alt="">
-            <nav class="navbar">
-                <ul>
-                    <a href="../index.html">INICIO</a>
-                    <a href="../pages/productos.html">PRODUCTOS</a>
-                    <a href="../pages/metodos.html">MÉTODOS DE PAGO</a>
-                    <a href="../pages/contacto.html">CONTACTO</a>
-                    <a href="../pages/nosotros.html">NOSOTROS</a>
-                </ul>
-            </nav>
-            <div>
-                <img onclick="showCart(this)" class="cart" src="../img/carrito.webp" alt="">
-                <p class="count-product">0</p>
-            </div>
-            <div class="cart-products" id="products-id">
-                <p class="close-btn" onclick="closeBtn()">X</p>
-                <h3>CARRITO</h3>
-                <div class="card-items">
-                    <!-- <div class="item">
-                        <img src="../img/pulseras1.jpg" alt="">
-                        <div class="item-content">
-                            <h5>PULSERA INFINITY LOVE</h5>
-                            <h5 class="cart-price">$50</h5>
-                            <h6>Amount: 3</h6>
+    <header class="sticky-top">
+        <!-- nav bar-->
+        <nav class="navbar navbar-expand-lg contenedor-nav">
+            <div class="container">
+                <!-- menu hamburguesa (responsive) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- logo -->
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo-cerca.jpg" alt="logo zibá">
+                </a>
+                <!-- carrito -->
+                <div class="navbar-btn-container">
+                    <button class="navbar-btn" id="verCarrito">
+                        <p class="count-product">0</p>
+                        <i onclick="showCart(this)" class="cart fa-solid fa-cart-shopping"></i>
+                    </button>
+                    <div class="cart-products" id="products-id">
+                        <p class="close-btn" onclick="closeBtn()">X</p>
+                        <h3>CARRITO</h3>
+                        <div class="card-items">
+                            <!-- <div class="item">
+                                <img src="./images/products/keyboard-1.jpg" alt="">
+                                <div class="item-content">
+                                    <h5>name of product name of product name of product</h5>
+                                    <h5 class="cart-price">45.50$</h5>
+                                    <h6>Amount: 3</h6>
+                                </div>
+                                <span>X</span>
+                            </div>
+            
+                            <div class="item">
+                                <img src="./images/products/keyboard-1.jpg" alt="">
+                                <div class="item-content">
+                                    <h5>name of product name of product name of product</h5>
+                                    <h5 class="cart-price">45.50$</h5>
+                                    <h6>Amount: 3</h6>
+                                </div>
+                                <span class="delete-product" data-id="">X</span>
+                            </div> -->
                         </div>
-                        <span>X</span>
+                        <h2>Total: $<strong class="price-total">0</strong></h2>
                     </div>
-    
-                    <div class="item">
-                        <img src="../img/pulseras2.jpg" alt="">
-                        <div class="item-content">
-                            <h5>PULSERA GREEN MOON</h5>
-                            <h5 class="cart-price">$100</h5>
-                            <h6>Amount: 3</h6>
-                        </div>
-                        <span class="delete-product" data-id="">X</span>
-                    </div> -->
+                    <!-- contenedor del modal del carrito -->
+                    <div class="modalFondo">
+                        <div id="modalContenedor"></div>
+                    </div>
                 </div>
-                <h2>Total: $<strong class="price-total">0</strong></h2>
+                <!-- nav -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                        <li class="nav-item p-2">
+                            <a class="nav-link" aria-current="page" href="../index.html">INICIO</a>
+                        </li>
+                        <!-- catalogo: menu desplegable (hover) -->
+                        <li id="menu-desplegable-hover" class="nav-item p-2">
+                            <div class="desplegable">
+                                <a class="nav-link dropdown-toggle" href="../pages/productos.html">
+                                    PRODUCTOS
+                                </a>
+                                <div class="desplegable-contenido">
+                                    <ul class="filtrarCatalogo">
+                                        <li><a data-value="anillos" href="./anillos.html">ANILLOS</a></li>
+                                        <li><a data-value="Pulsera" href="./pulseras.html">PULSERAS</a></li>
+                                        <li><a data-value="collares" href="./collares.html">COLLARES</a></li>
+                                        <li><a data-value="aros" href="./aritos.html">AROS</a></li>
+                                        <li><a data-value="dijes" href="./dijes.html">DIJES</a></li>
+                                        <li><a data-value="abridores" href="./abridor.html">ABRIDORES</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- catalogo: menu desplegable (dropdown) -->
+                        <li id="menu-desplegable-hamburguesa" class="nav-item p-1 dropdown">
+                            <a class="nav-link dropdown-toggle nav-link-dropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" href="../pages/productos.html">
+                                PRODUCTOS
+                            </a>
+                            <ul class="dropdown-menu filtrarCatalogo">
+                                <hr class="dropdown-divider">
+                                <li><a data-value="buzos" class="dropdown-item" href="./anillos.html">ANILLOS</a></li>
+                                <li><a data-value="calzados" class="dropdown-item" href="./pulseras.html">PULSERAS</a>
+                                </li>
+                                <li><a data-value="camisas" class="dropdown-item" href="./collares.html">COLLARES</a>
+                                </li>
+                                <li><a data-value="aros" class="dropdown-item" href="./aritos.html">AROS</a></li>
+                                <li><a data-value="dijes" class="dropdown-item" href="./dijes.html">DIJES</a></li>
+                                <li><a data-value="abridores" class="dropdown-item" href="./abridor.html">ABRIDORES</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- otros items del nav -->
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="../pages/metodos.html">CÓMO COMPRAR</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="../pages/nosotros.html">CONOCÉNOS</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="../pages/contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <section class="container">
         <!-- titulo -->
-        <div class="row">
-            <h2 class="section-titulo">DIJES</h2>
+        <div class="subtitulo">
+            <h2 class="section-titulo">PULSERAS</h2>
         </div>
         <div class="products">
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera1.jpg" alt="">
+                    <img src="../img/pulsera1.jpg" alt="img pulseras 1">
                     <p>$<span>50</span></p>
                 </div>
                 <p class="title">PULSERA INFINITY LOVE</p>
@@ -80,7 +142,7 @@
             </div>
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera2.jpg" alt="">
+                    <img src="../img/pulsera2.jpg" alt="img pulseras 2">
                     <p>$<span>100</span></p>
                 </div>
                 <p class="title">PULSERA GREEN MOON</p>
@@ -88,7 +150,7 @@
             </div>
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera3.jpg" alt="">
+                    <img src="../img/pulsera3.jpg" alt="img pulseras 3">
                     <p>$<span>200</span></p>
                 </div>
                 <p class="title">PULSERA INFINITY</p>
@@ -96,7 +158,7 @@
             </div>
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera4.jpg" alt="">
+                    <img src="../img/pulsera4.jpg" alt="img pulseras 4">
                     <p>$<span>300</span></p>
                 </div>
                 <p class="title">PULSERA CUARZO</p>
@@ -104,7 +166,7 @@
             </div>
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera5.jpg" alt="">
+                    <img src="../img/pulsera5.jpg" alt="img pulseras 5">
                     <p>$<span>400</span></p>
                 </div>
                 <p class="title">PULSERA AURORA</p>
@@ -112,7 +174,7 @@
             </div>
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera6.jpg" alt="">
+                    <img src="../img/pulsera6.jpg" alt="img pulseras 6">
                     <p>$<span>500</span></p>
                 </div>
                 <p class="title">PULSERA AFRODITA</p>
@@ -120,7 +182,7 @@
             </div>
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera7.jpg" alt="">
+                    <img src="../img/pulsera7.jpg" alt="img pulseras 7">
                     <p>$<span>600</span></p>
                 </div>
                 <p class="title">PULSERA SKY BLUE</p>
@@ -128,7 +190,7 @@
             </div>
             <div class="carts">
                 <div>
-                    <img src="../img/pulsera8.jpg" alt="">
+                    <img src="../img/pulsera8.jpg" alt="img pulseras 8">
                     <p>$<span>700</span></p>
                 </div>
                 <p class="title">PULSERA GOLDEN PEARL</p>
@@ -143,23 +205,23 @@
                 <div class="box1">
                     <h2>AYUDA</h2>
                     <ul class="lista-ayuda">
-                        <li><a href="#">Envios</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Métodos de pago</a></li>
+                        <li><a href="../pages/metodos.html">Envios</a></li>
+                        <li><a href="../pages/nosotros.html">Nosotros</a></li>
+                        <li><a href="../pages/metodos.html">Métodos de pago</a></li>
                         <li><a href="#">Información</a></li>
-                        <li><a href="#">Cambios</a></li>
-                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="../pages/metodos.html">Cambios</a></li>
+                        <li><a href="../pages/metodos.html">Devoluciones</a></li>
                     </ul>
                 </div>
                 <div class="box1">
                     <h2>PRODUCTOS</h2>
                     <ul class="lista-ayuda">
-                        <li><a href="#">Anillos</a></li>
-                        <li><a href="#">Pulseras</a></li>
-                        <li><a href="#">Collares</a></li>
-                        <li><a href="#">Aritos</a></li>
-                        <li><a href="#">Dijes</a></li>
-                        <li><a href="#">Chokers</a></li>
+                        <li><a href="./anillos.html">Anillos</a></li>
+                        <li><a href="./pulseras.html">Pulseras</a></li>
+                        <li><a href="./collares.html">Collares</a></li>
+                        <li><a href="./aritos.html">Aritos</a></li>
+                        <li><a href="./dijes.html">Dijes</a></li>
+                        <li><a href="./abridor.html">Abridores</a></li>
                     </ul>
                 </div>
                 <div class="box1">
@@ -173,7 +235,6 @@
         </div>
         <div class="grupo-2">
             <div class="red-social">
-                <a href="#" target="_blank" class="fa fa-facebook"></a>
                 <a href="#" target="_blank" class="fa fa-instagram"></a>
                 <a href="#" target="_blank" class="fa-regular fa-envelope"></a>
                 <a href="#" target="_blank" class="fa fa-whatsapp"></a>
@@ -189,8 +250,13 @@
         function closeBtn() {
             document.getElementById("products-id").style.display = "none";
         }
-
     </script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+
     <script src="../app.js"></script>
 </body>
 

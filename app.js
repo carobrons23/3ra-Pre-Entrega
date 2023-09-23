@@ -4,7 +4,6 @@ let containerBuyCart = document.querySelector('.card-items');
 let priceTotal = document.querySelector('.price-total')
 let amountProduct = document.querySelector('.count-product');
 
-
 let buyThings = [];
 let totalCard = 0;
 let countProduct = 0;
@@ -101,7 +100,22 @@ function loadHtml() {
 
         amountProduct.innerHTML = countProduct;
     });
+
+    document.getElementsByClassName('btn-checkout'[0].addEventListener)('click', checkoutClicked)
+}
+
+function checkoutClicked(event) {
+    alert("Introduzca su email")
 }
 function clearHtml() {
     containerBuyCart.innerHTML = '';
 }
+
+//set item
+const saveLocal = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+//get item 
+
+JSON.parse(localStorage.getItem('carrito'));
