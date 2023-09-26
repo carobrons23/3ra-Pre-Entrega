@@ -101,21 +101,12 @@ function loadHtml() {
         amountProduct.innerHTML = countProduct;
     });
 
-    document.getElementsByClassName('btn-checkout'[0].addEventListener)('click', checkoutClicked)
+    document.getElementsByClassName('btn-pagar'[0].addEventListener)('click', pagarClicked)
 }
 
-function checkoutClicked(event) {
-    alert("Introduzca su email")
+function pagarClicked(event) {
+    alert("Gracias por su compra!")
 }
 function clearHtml() {
     containerBuyCart.innerHTML = '';
 }
-
-//set item
-const saveLocal = () => {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-
-//get item 
-
-JSON.parse(localStorage.getItem('carrito'));

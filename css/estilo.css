@@ -305,21 +305,13 @@ p.author a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.btn-checkout {
-    text-decoration: none;
-    display: block;
+.btn-pagar {
     font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 12vw;
-    background: #fff;
     font-size: 19px;
     color: #000;
-    border: solid 1px #333;
     transition-duration: .3s;
 }
-.btn-checkout:hover {
+.btn-pagar:hover {
     background: #000;
     color: #fff;
     border: solid 2px #000;
@@ -794,7 +786,7 @@ form .btn-form:hover {
         font-size: 16px;
     }
     /*carrito btn checkout*/
-    .btn-checkout {
+    .btn-pagar {
         font-size: 19px;
         font-weight: 700;
         width: 23vw;
