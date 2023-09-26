@@ -105,7 +105,7 @@ function loadHtml() {
 }
 
 function pagarClicked(event) {
-    alert("Gracias por su compra!")
+    alert("Su compra se ha realizado con éxito. Gracias!")
 }
 function clearHtml() {
     containerBuyCart.innerHTML = '';
