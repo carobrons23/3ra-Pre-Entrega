@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/be621845ec.js"></script>
     <title>ZIBÁ | Contacto</title>
     <link rel="shortcut icon" href="../img/logoziba.webp">
@@ -117,7 +118,7 @@
                             pedirnos <b>ayuda</b>.</h3>
                     </div>
                     <figure class="red-social-contacto">
-                        <a class="row justify-content-center" href="#" target="_blank">
+                        <a class="row justify-content-center" href="https://www.instagram.com/zibaajoyas/?next=%2F" target="_blank">
                             <i class="col-1 m-2 fa-brands fa-instagram"></i>
                             <figcaption class="col-sm-5 col-8">
                                 Instagram
@@ -139,25 +140,30 @@
                             <i class="col-1 m-2 fa-regular fa-envelope"></i>
                             <figcaption class="col-sm-5 col-8">
                                 Email
-                                <br>zibajoyas@gmail.com
+                                <br>zibajoyas4@gmail.com
                             </figcaption>
                         </a>
                     </figure>
                 </section>
                 <!-- formulario -->
                 <section class="col-lg-6 col-12">
-                    <form class="row justify-content-center" id="formulario">
+                    <form class="row justify-content-center" id="formulario" action="https://formsubmit.co/zibajoyas4@gmail.com" method="POST">
                         <div class="col-lg-8 col-10 mb-3 p-0">
-                            <input type="text" placeholder="Nombre" required id="nombre" class="form-control-sm col-12">
+                            <input type="text" placeholder="Nombre" name="nombre" required id="nombre" class="form-control-sm col-12">
                         </div>
                         <div class="col-lg-8 col-10 mb-3 p-0">
-                            <input type="email" placeholder="Email" required id="email" class="form-control-sm col-12">
+                            <input type="email" placeholder="Email" name="email" required id="email" class="form-control-sm col-12">
                         </div>
                         <div class="col-lg-8 col-10 mb-3 p-0">
-                            <textarea placeholder="Mensaje" name="nombre" required id="mensaje"
+                            <textarea placeholder="Mensaje" name="mensaje" required id="mensaje"
                                 class="form-control-sm col-12 text-area"></textarea>
                         </div>
                         <button type="submit" class="col-lg-8 col-10 btn-form" id="btnEnviar">Enviar</button>
+
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/"> 
+
+                        <input type="hidden" name="_captcha" value="false"> 
+
                     </form>
                 </section>
             </div>
@@ -200,7 +206,7 @@
         </div>
         <div class="grupo-2">
             <div class="red-social">
-                <a href="#" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.instagram.com/zibaajoyas/?next=%2F" target="_blank" class="fa fa-instagram"></a>
                 <a href="#" target="_blank" class="fa-regular fa-envelope"></a>
                 <a href="#" target="_blank" class="fa fa-whatsapp"></a>
             </div>
@@ -218,6 +224,10 @@
     </script>
 
     <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
