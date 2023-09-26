@@ -101,7 +101,7 @@ function loadHtml() {
         amountProduct.innerHTML = countProduct;
     });
 
-    document.getElementsByClassName('btn-pagar'[0].addEventListener)('click', pagarClicked)
+    document.getElementsByClassName("btn-pagar")[0].addEventListener("click", pagarClicked);
 }
 
 function pagarClicked(event) {
