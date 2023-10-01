@@ -78,6 +78,21 @@ function readTheContent(product) {
     //console.log(infoProduct);
 }
 
+// productos que el usuario ha agregado al carrito
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+
+// guardar carrito en localStorage
+const carritoLocalStorage = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+
+// guardar contador en localStorage
+const contadorLocalStorage = carrito.length
+localStorage.setItem("contador carrito", JSON.stringify(contadorLocalStorage))
+
+cantidadCarrito.innerText = JSON.parse(localStorage.getItem("contador carrito"))
+
+
 function loadHtml() {
     clearHtml();
     buyThings.forEach(product => {
